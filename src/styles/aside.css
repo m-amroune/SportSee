@@ -1,0 +1,26 @@
+.aside {
+  height: 1024px;
+  width: 117px;
+  background-color: #020203;
+}
+
+.nav-aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 270px;
+  position: relative;
+}
+.nav-aside img {
+  padding-bottom: 20px;
+}
+
+.nav-aside img:nth-child(4) {
+  padding-bottom: 164px;
+}
+
+.nav-aside p {
+  color: #fff;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}

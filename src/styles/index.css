@@ -14,6 +14,17 @@ code {
 
 * {
   max-width: 1440px;
+  max-height: 1024px;
   margin: 0;
   padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 117px auto;
 }

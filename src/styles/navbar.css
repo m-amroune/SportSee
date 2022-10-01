@@ -9,15 +9,19 @@
 
 .navigation {
   display: flex;
-  color: #fff;
   width: 100%;
   justify-content: space-around;
   padding-left: 149px;
-  list-style-type: none;
   font-size: 24px;
 }
 
 img-logo {
   width: 178px;
   height: 60.93px;
+}
+
+.navigation li a {
+  color: #fff;
+  list-style-type: none;
+  text-decoration: none;
 }

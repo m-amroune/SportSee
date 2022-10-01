@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Aside from "./components/Aside";
 import Navbar from "./components/Navbar";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
@@ -8,13 +9,14 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <section>
+      <main>
+        <Aside />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profil" element={<Dashboard />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </section>
+      </main>
     </BrowserRouter>
   );
 }
