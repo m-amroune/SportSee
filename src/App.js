@@ -13,7 +13,7 @@ function App() {
         <Aside />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/profil" element={<Dashboard />} />
+          <Route path="/user/:id" element={<Dashboard />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
