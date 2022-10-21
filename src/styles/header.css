@@ -1,1 +1,14 @@
+.header-title {
+  font-size: 48px;
+  padding-left: 107px;
+  padding-top: 68px;
+}
 
+.header-title span {
+  color: #ff0101;
+}
+
+.header-paragraphe {
+  padding-left: 107px;
+  font-size: 18px;
+}

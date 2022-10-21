@@ -1,11 +1,15 @@
 import React from "react";
 import "../styles/header.css";
 
-const Header = ({ userFirstName }) => {
+const Header = ({ firstName }) => {
   return (
     <header className="header">
-      <h2>Bonjour {userFirstName} </h2>
-      <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+      <h2 className="header-title">
+        Bonjour <span>{firstName}</span>
+      </h2>
+      <p className="header-paragraphe">
+        Félicitation ! Vous avez explosé vos objectifs hier 👏
+      </p>
     </header>
   );
 };

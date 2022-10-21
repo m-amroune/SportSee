@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-// import Header from "../components/Header";
+import Header from "../components/Header";
 import Services from "../Services/Services";
+import "../styles/header.css";
 
 // let userFirstName = "";
 // let userActivity = "";
@@ -43,12 +44,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <header>
-        <p className="header-title">
-          Bonjour {userData.data.userInfos.firstName}
-        </p>
-        <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-      </header>
+      <Header firstName={userData.data.userInfos.firstName} />
     </div>
   );
 };

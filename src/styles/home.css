@@ -1,0 +1,16 @@
+.home-users {
+  display: flex;
+  gap: 100px;
+  padding: 25%;
+}
+
+.home-user {
+  list-style-type: none;
+  border: 4mm ridge #020203;
+  font-size: 25px;
+}
+
+.home-user a {
+  color: #ff0101;
+  text-decoration: none;
+}
