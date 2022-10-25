@@ -23,19 +23,13 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
-const monthTickFormatter = (tick) => {
-  const date = new Date(tick);
-
-  return date.getMonth() + 1;
-};
-
 const Activity = ({ userActivity }) => {
   return (
     <ResponsiveContainer>
       <BarChart data={userActivity}>
         <CartesianGrid strokeDasharray="3" vertical={false} />
         <XAxis
-          tickFormatter={monthTickFormatter}
+          tickFormatter={(day) => parseInt(day.slice(-1))}
           dataKey="day"
           tickLine={false}
           stroke=" #DEDEDE"
