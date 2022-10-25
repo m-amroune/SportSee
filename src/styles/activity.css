@@ -1,0 +1,13 @@
+.data-tooltip {
+  background-color: #ff0101;
+  color: #fff;
+  font-size: 9px;
+  line-height: 24px;
+}
+
+.custom-tooltip {
+  border: none;
+  width: 39px;
+  height: 100%;
+  text-align: center;
+}

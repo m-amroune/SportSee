@@ -1,29 +1,24 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../components/Header";
+import Activity from "../components/Activity";
 import Services from "../Services/Services";
 import "../styles/header.css";
 
-// let userFirstName = "";
-// let userActivity = "";
-// let userAverageSessions = "";
-// let userPerformance = "";
 const Dashboard = () => {
   const { id } = useParams();
   const [userData, setUserData] = useState();
-  // const [userActivity, setUserActivity] = useState();
+  const [userActivity, setUserActivity] = useState();
   // const [userPerformance, setUserPerformance] = useState();
   // const [userAverageSessions, setAverageSessions] = useState();
 
   useEffect(() => {
     Services.getUserById(id).then((data) => {
       setUserData(data);
-      console.log(data.data.userInfos.firstName);
     });
-    // Services.getUserActivityById(id).then((data) => {
-    //   setUserActivity(data);
-    //   console.log(data);
-    // });
+    Services.getUserActivityById(id).then((data) => {
+      setUserActivity(data);
+    });
     // Services.getUserAverageSessionById(id).then((data) => {
     //   setAverageSessions(data);
     //   console.log(data);
@@ -34,7 +29,7 @@ const Dashboard = () => {
     // });
   }, [id]);
 
-  if (!userData) {
+  if (!userData || !userActivity) {
     return (
       <div>
         <h3>Loading</h3>
@@ -45,6 +40,9 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <Header firstName={userData.data.userInfos.firstName} />
+      <div className="activity">
+        <Activity userActivity={userActivity.data.sessions} />
+      </div>
     </div>
   );
 };
