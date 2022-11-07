@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/activity.css";
+import "../../styles/activity.css";
 import {
   BarChart,
   Bar,
@@ -23,28 +23,65 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
+const legendBarChart = (value) => {
+  return <span className="legend-barChart"> {value} </span>;
+};
+
 const Activity = ({ userActivity }) => {
   return (
     <ResponsiveContainer>
-      <BarChart data={userActivity}>
+      <BarChart
+        data={userActivity}
+        margin={{
+          top: 60,
+          right: 50,
+          left: 45,
+          bottom: 20,
+        }}
+      >
         <CartesianGrid strokeDasharray="3" vertical={false} />
         <XAxis
           tickFormatter={(day) => parseInt(day.slice(-1))}
           dataKey="day"
           tickLine={false}
           stroke=" #DEDEDE"
-          tick={{ fill: "#9B9EAC", fontSize: 14 }}
+          width={900}
+          tick={{
+            fill: "#9B9EAC",
+            fontSize: 14,
+          }}
+          tickMargin={15}
         />
         <YAxis
+          yAxisId={0}
+          domain={["dataMin - 1", "dataMax + 2"]}
+          dataKey="kilogram"
           tickCount={3}
           axisLine={false}
           tickLine={false}
           orientation="right"
           tick={{ fill: "#9B9EAC", fontSize: 14 }}
+          tickMargin={25}
+        />
+        <YAxis
+          yAxisId={1}
+          domain={["dataMin - 160", "dataMax + 10"]}
+          dataKey="calories"
+          tickCount={3}
+          hide
         />
         <Tooltip content={<CustomTooltip />} />
-        <Legend />
+        <Legend
+          verticalAlign="top"
+          align="right"
+          iconType="circle"
+          iconSize={8}
+          height={50}
+          formatter={legendBarChart}
+          wrapperStyle={{ top: 30 }}
+        />
         <Bar
+          yAxisId={0}
           barSize={7}
           dataKey="kilogram"
           fill="#282d30"
@@ -52,12 +89,16 @@ const Activity = ({ userActivity }) => {
           radius={[3, 3, 0, 0]}
         />
         <Bar
+          yAxisId={1}
           barSize={7}
           dataKey="calories"
           fill="#e60000"
           name="Calories brûlées (kCal)"
           radius={[3, 3, 0, 0]}
         />
+        <text x="40" y="40" fontSize={16}>
+          Activité quotidienne
+        </text>
       </BarChart>
     </ResponsiveContainer>
   );

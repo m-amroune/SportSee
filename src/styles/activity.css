@@ -11,3 +11,8 @@
   height: 100%;
   text-align: center;
 }
+
+.legend-barChart {
+  color: #74798c;
+  font-size: 14px;
+}

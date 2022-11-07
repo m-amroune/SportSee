@@ -1,35 +1,45 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../components/Header";
-import Activity from "../components/Activity";
+import Activity from "../components/Charts/Activity";
 import Services from "../Services/Services";
 import "../styles/header.css";
+import "../styles/mini-cards.css";
+import Sessions from "../components/Charts/AverageSessions";
+import Performance from "../components/Charts/Performance";
+import Score from "../components/Charts/Score";
+import Calories from "../components/Calories";
+import Proteines from "../components/Proteines";
+import Glucides from "../components/Glucides";
+import Lipides from "../components/Lipides";
 
 const Dashboard = () => {
   const { id } = useParams();
   const [userData, setUserData] = useState();
   const [userActivity, setUserActivity] = useState();
-  // const [userPerformance, setUserPerformance] = useState();
-  // const [userAverageSessions, setAverageSessions] = useState();
+  const [userPerformance, setUserPerformance] = useState();
+  const [userAverageSessions, setAverageSessions] = useState();
 
   useEffect(() => {
     Services.getUserById(id).then((data) => {
       setUserData(data);
+      // console.log(data);
     });
     Services.getUserActivityById(id).then((data) => {
       setUserActivity(data);
+      // console.log(data);
     });
-    // Services.getUserAverageSessionById(id).then((data) => {
-    //   setAverageSessions(data);
-    //   console.log(data);
-    // });
-    // Services.getUserPerformanceById(id).then((data) => {
-    //   setUserPerformance(data);
-    //   console.log(data);
-    // });
+    Services.getUserAverageSessionById(id).then((data) => {
+      setAverageSessions(data);
+      // console.log(data);
+    });
+    Services.getUserPerformanceById(id).then((data) => {
+      setUserPerformance(data);
+      // console.log(data);
+    });
   }, [id]);
 
-  if (!userData || !userActivity) {
+  if (!userData || !userActivity || !userAverageSessions || !userPerformance) {
     return (
       <div>
         <h3>Loading</h3>
@@ -40,8 +50,39 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <Header firstName={userData.data.userInfos.firstName} />
-      <div className="activity">
-        <Activity userActivity={userActivity.data.sessions} />
+      <div className="charts-mini-cards">
+        <section className="charts">
+          <article className="activity">
+            <Activity userActivity={userActivity.data.sessions} />
+          </article>
+          <article className="sessions">
+            <Sessions userAverageSessions={userAverageSessions.data.sessions} />
+          </article>
+          <article className="performance">
+            <Performance userPerformance={userPerformance.data.data} />
+          </article>
+          <article className="score">
+            <Score
+              userData={
+                userData.data.todayScore * 100 || userData.data.score * 100
+              }
+            />
+          </article>
+        </section>
+        <section className="mini-cards">
+          <div className="calories">
+            <Calories keyData={userData.data.keyData.calorieCount} />
+          </div>
+          <div className="proteines">
+            <Proteines keyData={userData.data.keyData.proteinCount} />
+          </div>
+          <div className="glucides">
+            <Glucides keyData={userData.data.keyData.carbohydrateCount} />
+          </div>
+          <div className="lipides">
+            <Lipides keyData={userData.data.keyData.lipidCount} />
+          </div>
+        </section>
       </div>
     </div>
   );

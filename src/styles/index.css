@@ -30,9 +30,48 @@ main {
   grid-template-columns: 117px auto;
 }
 
+.charts-mini-cards {
+  display: flex;
+  flex-direction: row;
+}
+
+.charts {
+  padding-left: 109px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+  width: 90%;
+}
+
 .activity {
-  width: 100%;
+  width: 90%;
   height: 320px;
   border-radius: 5px;
   margin-top: 40px;
+  background-color: #fbfbfb;
+}
+
+.sessions,
+.performance,
+.score {
+  width: 29%;
+  height: 300px;
+  border-radius: 5px;
+  margin-top: 40px;
+  background-color: #fbfbfb;
+}
+
+.custom-tooltip-sessions {
+  border: none;
+  width: 39px;
+  height: 100%;
+  text-align: center;
+  color: black;
+}
+
+.data-tooltip-sessions {
+  background-color: #fff;
+  color: #000;
+  font-size: 9px;
+  line-height: 24px;
 }
