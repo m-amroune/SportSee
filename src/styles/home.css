@@ -1,18 +1,33 @@
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 90%;
+}
+
 .home-users {
   display: flex;
   gap: 100px;
-  padding: 25%;
 }
 
 .home-user {
   list-style-type: none;
-  border: 4mm ridge #020203;
-  border-radius: 10%;
-  font-size: 25px;
 }
 
 .home-user a {
-  color: #ff0101;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 80px;
   text-decoration: none;
-  padding: 10px;
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 500;
+  background-color: #000;
+  border-radius: 7px;
+  border: 5px solid #ff0101;
 }

@@ -15,9 +15,10 @@
   font-size: 24px;
 }
 
-img-logo {
+.img-logo {
   width: 178px;
   height: 60.93px;
+  margin-left: 28px;
 }
 
 .navigation li a {
