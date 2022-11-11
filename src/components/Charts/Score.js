@@ -5,6 +5,7 @@ import {
   PolarAngleAxis,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
 
 const Score = ({ userData }) => {
   const data = [
@@ -49,3 +50,7 @@ const Score = ({ userData }) => {
 };
 
 export default Score;
+
+Score.propTypes = {
+  userData: PropTypes.number.isRequired,
+};

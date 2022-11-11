@@ -8,6 +8,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import "../../styles/index.css";
+import PropTypes from "prop-types";
 
 const weekDays = (day) => {
   switch (day) {
@@ -46,7 +47,16 @@ const AverageSessions = ({ userAverageSessions }) => {
       <LineChart
         style={{ backgroundColor: "#ff0000", borderRadius: "5px" }}
         data={userAverageSessions}
+        margin={{ top: -30, right: 10, left: 10, bottom: -30 }}
       >
+        <Line
+          type="monotone"
+          dataKey="sessionLength"
+          unit=" min"
+          strokeWidth={2}
+          stroke="#fff"
+          dot={false}
+        />
         <XAxis
           dataKey="day"
           tickFormatter={weekDays}
@@ -55,6 +65,7 @@ const AverageSessions = ({ userAverageSessions }) => {
             fontSize: 12,
             fontWeight: 500,
             opacity: 0.5,
+            dy: -35,
           }}
           axisLine={false}
           tickLine={false}
@@ -67,14 +78,11 @@ const AverageSessions = ({ userAverageSessions }) => {
             width: "10%",
             border: "none",
           }}
-        />
-        <Line
-          type="monotone"
-          dataKey="sessionLength"
-          unit=" min"
-          strokeWidth={2}
-          stroke="#fff"
-          dot={false}
+          cursor={{
+            stroke: "rgba(0, 0, 0, 0.1)",
+            strokeWidth: 62,
+            position: "right",
+          }}
         />
 
         <text opacity={0.5} fill="#fff" x="20" y="40" fontSize={16}>
@@ -89,3 +97,12 @@ const AverageSessions = ({ userAverageSessions }) => {
 };
 
 export default AverageSessions;
+
+AverageSessions.propTypes = {
+  userAverageSessions: PropTypes.arrayOf(
+    PropTypes.shape({
+      day: PropTypes.number,
+      sessionsLength: PropTypes.number,
+    })
+  ).isRequired,
+};

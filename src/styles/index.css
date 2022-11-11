@@ -21,19 +21,38 @@ code {
   box-sizing: border-box;
 }
 
-body {
-  display: flex;
-  flex-direction: row;
-}
-
 main {
   display: grid;
-  grid-template-columns: 117px auto;
+  grid-template-columns: 107px auto;
+}
+
+.dashboard {
+  max-width: 1333px;
+}
+@media only screen and (max-width: 1200px) {
+  .dashboard {
+    padding-left: 50px;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  main {
+    grid-template-columns: 40px auto;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
 }
 
 .charts-mini-cards {
   display: flex;
   flex-direction: row;
+}
+
+@media only screen and (max-width: 1200px) {
+  .charts-mini-cards {
+    flex-direction: column;
+  }
 }
 
 .charts {
@@ -45,7 +64,7 @@ main {
 }
 
 .activity {
-  width: 90%;
+  width: 95.3%;
   height: 320px;
   border-radius: 5px;
   margin-top: 40px;
@@ -55,7 +74,7 @@ main {
 .sessions,
 .performance,
 .score {
-  width: 29%;
+  width: 30.5%;
   height: 300px;
   border-radius: 5px;
   margin-top: 40px;

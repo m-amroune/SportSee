@@ -10,6 +10,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
 
 const CustomTooltip = ({ active, payload }) => {
   if (active) {
@@ -39,7 +40,7 @@ const Activity = ({ userActivity }) => {
           bottom: 20,
         }}
       >
-        <CartesianGrid strokeDasharray="3" vertical={false} />
+        <CartesianGrid strokeDasharray="3" stroke="#DEDEDE" vertical={false} />
         <XAxis
           tickFormatter={(day) => parseInt(day.slice(-1))}
           dataKey="day"
@@ -78,7 +79,7 @@ const Activity = ({ userActivity }) => {
           iconSize={8}
           height={50}
           formatter={legendBarChart}
-          wrapperStyle={{ top: 30 }}
+          wrapperStyle={{ top: 25 }}
         />
         <Bar
           yAxisId={0}
@@ -105,3 +106,12 @@ const Activity = ({ userActivity }) => {
 };
 
 export default Activity;
+
+Activity.propTypes = {
+  userActivity: PropTypes.arrayOf(
+    PropTypes.shape({
+      kilogram: PropTypes.number,
+      calories: PropTypes.number,
+    })
+  ).isRequired,
+};

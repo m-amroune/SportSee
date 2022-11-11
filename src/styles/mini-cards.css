@@ -14,11 +14,41 @@
 .mini-cards {
   display: flex;
   flex-direction: column;
+  margin-right: 90px;
+}
+
+@media only screen and (max-width: 1300px) {
+  .mini-cards {
+    flex-direction: column;
+    margin-left: 107px;
+    gap: 3%;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .mini-cards {
+    flex-direction: row;
+    margin-left: 107px;
+    gap: 3.4%;
+    width: 77%;
+    margin-right: 202px;
+  }
+  .mini-cards div {
+    max-width: 200px;
+  }
+  .lipides {
+    margin-right: 40px;
+  }
 }
 
 .mini-card span {
   font-weight: 700;
   font-size: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .mini-card span {
+    font-size: 16px;
+  }
 }
 
 .nutriments {

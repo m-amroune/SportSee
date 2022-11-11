@@ -1,4 +1,4 @@
-let env = "dev";
+let env = "dev"; // switch prod or dev
 
 const Services = {
   getUserById: async function (id) {

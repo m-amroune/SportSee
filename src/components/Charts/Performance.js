@@ -7,6 +7,7 @@ import {
   PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
 
 const categoriesPerf = (kind) => {
   switch (kind) {
@@ -33,8 +34,10 @@ const Performance = ({ userPerformance }) => {
       <RadarChart
         style={{ backgroundColor: "#282D30", borderRadius: "5px" }}
         data={userPerformance}
+        margin={{ top: 10, right: 20, left: 20, bottom: 10 }}
       >
         <PolarGrid radialLines={false} />
+
         <PolarAngleAxis
           tickFormatter={categoriesPerf}
           dataKey="kind"
@@ -49,3 +52,12 @@ const Performance = ({ userPerformance }) => {
 };
 
 export default Performance;
+
+Performance.propTypes = {
+  userPerformance: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.number,
+      kind: PropTypes.number,
+    })
+  ).isRequired,
+};
