@@ -97,7 +97,7 @@ const Activity = ({ userActivity }) => {
           name="Calories brûlées (kCal)"
           radius={[3, 3, 0, 0]}
         />
-        <text x="40" y="40" fontSize={16}>
+        <text fill="#20253a" fontWeight={700} x="40" y="40" fontSize={15}>
           Activité quotidienne
         </text>
       </BarChart>

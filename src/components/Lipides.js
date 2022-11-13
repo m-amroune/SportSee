@@ -1,5 +1,6 @@
 import React from "react";
 import Img from "../assets/fat-icon.svg";
+import PropTypes from "prop-types";
 const Lipides = ({ keyData }) => {
   return (
     <div className="mini-card">
@@ -15,3 +16,7 @@ const Lipides = ({ keyData }) => {
 };
 
 export default Lipides;
+
+Lipides.propTypes = {
+  keyData: PropTypes.number.isRequired,
+};

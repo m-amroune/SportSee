@@ -1,3 +1,53 @@
-.error-title {
-  color: #ff0000;
+.error-page {
+  display: flex;
+  flex-direction: column;
+  margin-top: 107px;
+}
+
+.error-page h1 {
+  color: #ff0101;
+  font-weight: 500;
+  font-size: 148px;
+  height: 263px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+@media all and (max-width: 768px) {
+  .error-page h1 {
+    font-size: 96px;
+    height: 99px;
+    margin-bottom: 22px;
+  }
+}
+
+.error-page h2 {
+  font-size: 26px;
+  font-weight: 500;
+  color: #ff0101;
+  text-align: center;
+  margin-bottom: 82px;
+}
+
+@media all and (max-width: 768px) {
+  .error-page h2 {
+    font-size: 18px;
+    height: 52px;
+  }
+}
+
+.error-page p {
+  font-size: 18px;
+  text-align: center;
+  font-weight: 500;
+}
+
+@media all and (max-width: 768px) {
+  .error-page p {
+    font-size: 14px;
+  }
+}
+
+.error-page p a {
+  color: #ff0101;
 }

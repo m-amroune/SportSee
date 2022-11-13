@@ -85,10 +85,10 @@ const AverageSessions = ({ userAverageSessions }) => {
           }}
         />
 
-        <text opacity={0.5} fill="#fff" x="20" y="40" fontSize={16}>
+        <text opacity={0.5} fill="#fff" x="25" y="50" fontSize={16}>
           Durée moyenne des
         </text>
-        <text opacity={0.5} fill="#fff" x="20" y="65" fontSize={16}>
+        <text opacity={0.5} fill="#fff" x="25" y="75" fontSize={16}>
           sessions
         </text>
       </LineChart>

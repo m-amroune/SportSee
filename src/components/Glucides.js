@@ -1,5 +1,6 @@
 import React from "react";
 import Img from "../assets/carbs-icon.svg";
+import PropTypes from "prop-types";
 const Glucides = ({ keyData }) => {
   return (
     <div className="mini-card">
@@ -16,3 +17,7 @@ const Glucides = ({ keyData }) => {
 };
 
 export default Glucides;
+
+Glucides.propTypes = {
+  keyData: PropTypes.number.isRequired,
+};

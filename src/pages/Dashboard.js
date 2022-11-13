@@ -23,19 +23,15 @@ const Dashboard = () => {
   useEffect(() => {
     Services.getUserById(id).then((data) => {
       setUserData(data);
-      // console.log(data);
     });
     Services.getUserActivityById(id).then((data) => {
       setUserActivity(data);
-      // console.log(data);
     });
     Services.getUserAverageSessionById(id).then((data) => {
       setAverageSessions(data);
-      // console.log(data);
     });
     Services.getUserPerformanceById(id).then((data) => {
       setUserPerformance(data);
-      // console.log(data);
     });
   }, [id]);
 
@@ -49,38 +45,63 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <Header firstName={userData.data.userInfos.firstName} />
+      <Header
+        firstName={userData.firstName || userData.data.userInfos.firstName}
+      />
       <div className="charts-mini-cards">
         <section className="charts">
           <article className="activity">
-            <Activity userActivity={userActivity.data.sessions} />
+            <Activity
+              userActivity={userActivity.sessions || userActivity.data.sessions}
+            />
           </article>
           <article className="sessions">
-            <Sessions userAverageSessions={userAverageSessions.data.sessions} />
+            <Sessions
+              userAverageSessions={
+                userAverageSessions.sessions ||
+                userAverageSessions.data.sessions
+              }
+            />
           </article>
           <article className="performance">
-            <Performance userPerformance={userPerformance.data.data} />
+            <Performance
+              userPerformance={
+                userPerformance.data.data || userPerformance.data
+              }
+            />
           </article>
           <article className="score">
             <Score
               userData={
-                userData.data.todayScore * 100 || userData.data.score * 100
+                userData.todayScore * 100 ||
+                userData.data.todayScore * 100 ||
+                userData.data.score * 100
               }
             />
           </article>
         </section>
         <section className="mini-cards">
           <div className="calories">
-            <Calories keyData={userData.data.keyData.calorieCount} />
+            <Calories
+              keyData={userData.calorie || userData.data.keyData.calorieCount}
+            />
           </div>
           <div className="proteines">
-            <Proteines keyData={userData.data.keyData.proteinCount} />
+            <Proteines
+              keyData={userData.proteine || userData.data.keyData.proteinCount}
+            />
           </div>
           <div className="glucides">
-            <Glucides keyData={userData.data.keyData.carbohydrateCount} />
+            <Glucides
+              keyData={
+                userData.glucide || userData.data.keyData.carbohydrateCount
+              }
+            />
           </div>
           <div className="lipides">
-            <Lipides keyData={userData.data.keyData.lipidCount} />
+            <Lipides
+              keyData={userData.lipide || userData.data.keyData.lipidCount}
+            />
           </div>
         </section>
       </div>

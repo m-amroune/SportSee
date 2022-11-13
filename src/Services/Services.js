@@ -1,4 +1,10 @@
-let env = "dev"; // switch prod or dev
+import {
+  activityData,
+  averageSessionData,
+  performanceData,
+  userMainData,
+} from "./classModel";
+let env = "dev"; // switch "prod" (api) or "dev" (mock)
 
 const Services = {
   getUserById: async function (id) {
@@ -13,8 +19,8 @@ const Services = {
 
       const data = json.USER_MAIN_DATA.find((user) => user.id === parseInt(id));
 
-      const result = { data: data };
-
+      const result = new userMainData(data);
+      console.log(result);
       return result;
     }
   },
@@ -28,7 +34,7 @@ const Services = {
       const response = await fetch("/data/ApiMocked.json");
       const json = await response.json();
       const data = json.USER_ACTIVITY.find((user) => user.id === parseInt(id));
-      const result = { data: data };
+      const result = new activityData(data);
 
       return result;
     }
@@ -47,7 +53,7 @@ const Services = {
       const data = json.USER_AVERAGE_SESSIONS.find(
         (user) => user.id === parseInt(id)
       );
-      const result = { data: data };
+      const result = new averageSessionData(data);
 
       return result;
     }
@@ -59,6 +65,7 @@ const Services = {
         `http://localhost:3000/user/${id}/performance`
       );
       const data = await response.json();
+      console.log(data);
       return data;
     } else {
       const response = await fetch("/data/ApiMocked.json");
@@ -66,7 +73,7 @@ const Services = {
       const data = json.USER_PERFORMANCE.find(
         (user) => user.id === parseInt(id)
       );
-      const result = { data: data };
+      const result = new performanceData(data);
 
       return result;
     }

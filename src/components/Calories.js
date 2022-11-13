@@ -1,5 +1,6 @@
 import React from "react";
 import Img from "../assets/calories-icon.svg";
+import PropTypes from "prop-types";
 const Calories = ({ keyData }) => {
   return (
     <div className="mini-card">
@@ -15,3 +16,6 @@ const Calories = ({ keyData }) => {
 };
 
 export default Calories;
+Calories.propTypes = {
+  keyData: PropTypes.number.isRequired,
+};

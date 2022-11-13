@@ -17,8 +17,8 @@ const Score = ({ userData }) => {
 
   return (
     <ResponsiveContainer>
-      <RadialBarChart innerRadius={70} barSize={10} startAngle={80} data={data}>
-        <circle cx="50%" cy="50%" fill="#fff" r="70"></circle>
+      <RadialBarChart innerRadius={86} barSize={10} startAngle={80} data={data}>
+        <circle cx="50%" cy="50%" fill="#fff" r="90"></circle>
         <PolarAngleAxis
           type="number"
           domain={[0, 100]}
@@ -28,8 +28,7 @@ const Score = ({ userData }) => {
         <RadialBar
           dataKey="uv"
           angleAxisId={1}
-          fill="var(--red)"
-          cornerRadius="10"
+          cornerRadius="5"
           data={[data[0]]}
         />
         <text x="42.5%" y="45%" fontWeight="700" fontSize={26}>
@@ -41,7 +40,7 @@ const Score = ({ userData }) => {
         <text x="41%" y="63%" fill="#74798C" fontSize={18}>
           objectif
         </text>
-        <text x="20" y="40" fontSize={16}>
+        <text fontWeight={700} x="30" y="55" fontSize={15}>
           Score
         </text>
       </RadialBarChart>
