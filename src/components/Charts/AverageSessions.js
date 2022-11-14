@@ -31,6 +31,13 @@ const weekDays = (day) => {
   }
 };
 
+/**
+ *
+ * @param {boolean} - active="true"
+ * @param {array} - payload
+ * @returns tooltip or null
+ */
+
 const customTooltip = ({ active, payload }) => {
   if (active) {
     return (
@@ -39,7 +46,14 @@ const customTooltip = ({ active, payload }) => {
       </div>
     );
   }
+  return null;
 };
+
+/**
+ * Chart with data user average sessions
+ * @param {array} -
+ * @returns - component
+ */
 
 const AverageSessions = ({ userAverageSessions }) => {
   return (

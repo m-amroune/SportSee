@@ -7,6 +7,12 @@ import {
 } from "recharts";
 import PropTypes from "prop-types";
 
+/**
+ * Chart with data user score
+ * @param {array} -
+ * @returns - component
+ */
+
 const Score = ({ userData }) => {
   const data = [
     {
@@ -17,8 +23,8 @@ const Score = ({ userData }) => {
 
   return (
     <ResponsiveContainer>
-      <RadialBarChart innerRadius={86} barSize={10} startAngle={80} data={data}>
-        <circle cx="50%" cy="50%" fill="#fff" r="90"></circle>
+      <RadialBarChart innerRadius={86} barSize={10} startAngle={90} data={data}>
+        <circle cx="50%" cy="50%" fill="#fff" r="80"></circle>
         <PolarAngleAxis
           type="number"
           domain={[0, 100]}

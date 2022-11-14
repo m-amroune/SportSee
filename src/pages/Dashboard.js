@@ -13,6 +13,20 @@ import Proteines from "../components/Proteines";
 import Glucides from "../components/Glucides";
 import Lipides from "../components/Lipides";
 
+/**
+ * function for display user dashboard
+ * @param {string} - firstName
+ * @param {object} - activity
+ * @param {object} - sessions
+ * @param {object} - performance
+ * @param {object} - score
+ * @param {number} - calories
+ * @param {number} - proteines
+ * @param {number} - glucides
+ * @param {number} - lipides
+ * @returns - components
+ */
+
 const Dashboard = () => {
   const { id } = useParams();
   const [userData, setUserData] = useState();
@@ -45,9 +59,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <Header
-        firstName={userData.firstName || userData.data.userInfos.firstName}
-      />
+      <Header firstName={userData.firstName} />
       <div className="charts-mini-cards">
         <section className="charts">
           <article className="activity">

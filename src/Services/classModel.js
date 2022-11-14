@@ -1,3 +1,5 @@
+// Modeling class
+
 class userMainData {
   constructor(data) {
     this.id = data.id;

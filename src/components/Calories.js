@@ -1,6 +1,7 @@
 import React from "react";
 import Img from "../assets/calories-icon.svg";
 import PropTypes from "prop-types";
+
 const Calories = ({ keyData }) => {
   return (
     <div className="mini-card">

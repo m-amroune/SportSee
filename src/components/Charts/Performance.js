@@ -28,6 +28,12 @@ const categoriesPerf = (kind) => {
   }
 };
 
+/**
+ * Chart with data user performance
+ * @param {array} -
+ * @returns - component
+ */
+
 const Performance = ({ userPerformance }) => {
   return (
     <ResponsiveContainer>

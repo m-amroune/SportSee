@@ -12,6 +12,13 @@ import {
 } from "recharts";
 import PropTypes from "prop-types";
 
+/**
+ *
+ * @param {boolean} - active="true"
+ * @param {array} - payload
+ * @returns tooltip or null
+ */
+
 const CustomTooltip = ({ active, payload }) => {
   if (active) {
     return (
@@ -27,6 +34,12 @@ const CustomTooltip = ({ active, payload }) => {
 const legendBarChart = (value) => {
   return <span className="legend-barChart"> {value} </span>;
 };
+
+/**
+ * Chart with data user activity
+ * @param {array} -
+ * @returns - component
+ */
 
 const Activity = ({ userActivity }) => {
   return (
