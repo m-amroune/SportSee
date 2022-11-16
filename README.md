@@ -2,15 +2,25 @@
 
 Project 12 OpenClassrooms : Build an analytics dashboard with React
 
+## Technologies
+
+* react (v 18.2.0)
+* react-dom (v 18.2.0)
+* react-router-dom (v 6.4.0)
+* recharts (v 2.1.15)
+
+## Resources Provided
+
+* [Figma](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?node-id=0%3A1) 
+* [Kanban](https://www.notion.so/Tableau-de-bord-SportSee-6686aa4b5f44417881a4884c9af5669e)
+
+
+## INSTALLATION
+
 ## Prerequisites
 
-NodeJS (v18.2.0).\
-npm (8.3.0).\
-Yarn (1.22.19).\
-React (v18.2.0).\
-React Router Dom (v6.4.0).\
-Recharts (v2.1.15).\
-
+* Nodejs (v 18.2.0) 
+* npm (or Yarn)
 
 ### `Install and Run Application`
 
