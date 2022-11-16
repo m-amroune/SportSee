@@ -1,22 +1,22 @@
 import React from "react";
-import Img from "../assets/protein-icon.svg";
+import Img from "../../assets/fat-icon.svg";
 import PropTypes from "prop-types";
-const Proteines = ({ keyData }) => {
+const Lipides = ({ keyData }) => {
   return (
     <div className="mini-card">
-      <img src={Img} alt=" icon Proteines" />
+      <img src={Img} alt=" icon Lipides" />
       <div className="valor-nutriment">
         <p>
           <span>{`${keyData}`}g</span>{" "}
         </p>
-        <p className="nutriments">Proteines</p>
+        <p className="nutriments">Lipides</p>
       </div>
     </div>
   );
 };
 
-export default Proteines;
+export default Lipides;
 
-Proteines.propTypes = {
+Lipides.propTypes = {
   keyData: PropTypes.number.isRequired,
 };

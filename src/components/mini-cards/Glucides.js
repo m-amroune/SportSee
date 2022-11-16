@@ -1,5 +1,5 @@
 import React from "react";
-import Img from "../assets/carbs-icon.svg";
+import Img from "../../assets/carbs-icon.svg";
 import PropTypes from "prop-types";
 const Glucides = ({ keyData }) => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import Img from "../assets/calories-icon.svg";
+import Img from "../../assets/calories-icon.svg";
 import PropTypes from "prop-types";
 
 const Calories = ({ keyData }) => {
@@ -8,7 +8,7 @@ const Calories = ({ keyData }) => {
       <img src={Img} alt=" icon Calories" />
       <div className="valor-nutriment">
         <p>
-          <span>{`${keyData}`}kCal</span>{" "}
+          <span>{`${keyData}`}kCal</span>
         </p>
         <p className="nutriments">Calories</p>
       </div>

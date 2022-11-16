@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../components/Header";
-import Activity from "../components/Charts/Activity";
+import Activity from "../components/charts/Activity";
 import Services from "../Services/Services";
 import "../styles/header.css";
 import "../styles/mini-cards.css";
-import Sessions from "../components/Charts/AverageSessions";
-import Performance from "../components/Charts/Performance";
-import Score from "../components/Charts/Score";
-import Calories from "../components/Calories";
-import Proteines from "../components/Proteines";
-import Glucides from "../components/Glucides";
-import Lipides from "../components/Lipides";
+import Sessions from "../components/charts/AverageSessions";
+import Performance from "../components/charts/Performance";
+import Score from "../components/charts/Score";
+import Calories from "../components/mini-cards/Calories";
+import Proteines from "../components/mini-cards/Proteines";
+import Glucides from "../components/mini-cards/Glucides";
+import Lipides from "../components/mini-cards/Lipides";
 
 /**
  * function for display user dashboard
@@ -52,7 +52,7 @@ const Dashboard = () => {
   if (!userData || !userActivity || !userAverageSessions || !userPerformance) {
     return (
       <div>
-        <h3>Loading</h3>
+        <h3 className="loading">Loading...</h3>
       </div>
     );
   }
@@ -63,57 +63,30 @@ const Dashboard = () => {
       <div className="charts-mini-cards">
         <section className="charts">
           <article className="activity">
-            <Activity
-              userActivity={userActivity.sessions || userActivity.data.sessions}
-            />
+            <Activity userActivity={userActivity.sessions} />
           </article>
           <article className="sessions">
-            <Sessions
-              userAverageSessions={
-                userAverageSessions.sessions ||
-                userAverageSessions.data.sessions
-              }
-            />
+            <Sessions userAverageSessions={userAverageSessions.sessions} />
           </article>
           <article className="performance">
-            <Performance
-              userPerformance={
-                userPerformance.data.data || userPerformance.data
-              }
-            />
+            <Performance userPerformance={userPerformance.data} />
           </article>
           <article className="score">
-            <Score
-              userData={
-                userData.todayScore * 100 ||
-                userData.data.todayScore * 100 ||
-                userData.data.score * 100
-              }
-            />
+            <Score userData={userData.todayScore * 100} />
           </article>
         </section>
         <section className="mini-cards">
           <div className="calories">
-            <Calories
-              keyData={userData.calorie || userData.data.keyData.calorieCount}
-            />
+            <Calories keyData={userData.calorie} />
           </div>
           <div className="proteines">
-            <Proteines
-              keyData={userData.proteine || userData.data.keyData.proteinCount}
-            />
+            <Proteines keyData={userData.proteine} />
           </div>
           <div className="glucides">
-            <Glucides
-              keyData={
-                userData.glucide || userData.data.keyData.carbohydrateCount
-              }
-            />
+            <Glucides keyData={userData.glucide} />
           </div>
           <div className="lipides">
-            <Lipides
-              keyData={userData.lipide || userData.data.keyData.lipidCount}
-            />
+            <Lipides keyData={userData.lipide} />
           </div>
         </section>
       </div>

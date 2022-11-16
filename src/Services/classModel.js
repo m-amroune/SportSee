@@ -1,6 +1,6 @@
 // Modeling class
 
-class userMainData {
+class UserMainData {
   constructor(data) {
     this.id = data.id;
     this.firstName = data.userInfos.firstName;
@@ -12,26 +12,38 @@ class userMainData {
   }
 }
 
-class activityData {
+class ActivityData {
   constructor(data) {
     this.id = data.id;
     this.sessions = data.sessions;
   }
 }
 
-class averageSessionData {
+class AverageSessionData {
   constructor(data) {
     this.id = data.id;
     this.sessions = data.sessions;
   }
 }
 
-class performanceData {
+class PerformanceData {
   constructor(data) {
-    this.id = data.id;
-    this.kind = data.kind;
-    this.data = data.data;
+    const categories = {
+      1: "Cardio",
+      2: "Energie",
+      3: "Endurance",
+      4: "Force",
+      5: "Vitesse",
+      6: "Intensité",
+    };
+
+    for (const categoriesPerf in data.data) {
+      data.data[categoriesPerf].kind = categories[parseInt(categoriesPerf) + 1];
+    }
+
+    // method reverse for display RadarChart categories in correct order
+    this.data = Object.values(data.data).reverse();
   }
 }
 
-export { userMainData, activityData, averageSessionData, performanceData };
+export { UserMainData, ActivityData, AverageSessionData, PerformanceData };
