@@ -13,20 +13,6 @@ import Proteines from "../components/mini-cards/Proteines";
 import Glucides from "../components/mini-cards/Glucides";
 import Lipides from "../components/mini-cards/Lipides";
 
-/**
- * function for display user dashboard
- * @param {string} - firstName
- * @param {object} - activity
- * @param {object} - sessions
- * @param {object} - performance
- * @param {object} - score
- * @param {number} - calories
- * @param {number} - proteines
- * @param {number} - glucides
- * @param {number} - lipides
- * @returns - components
- */
-
 const Dashboard = () => {
   const { id } = useParams();
   const [userData, setUserData] = useState();

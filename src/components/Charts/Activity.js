@@ -37,8 +37,9 @@ const legendBarChart = (value) => {
 
 /**
  * Chart with data user activity
- * @param {array} -
- * @returns - component
+ * @param {number} - userActivities.kilogram
+ * @param {number} - userActivities.calories
+ * @returns component
  */
 
 const Activity = ({ userActivity }) => {

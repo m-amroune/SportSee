@@ -51,7 +51,7 @@ const customTooltip = ({ active, payload }) => {
 
 /**
  * Chart with data user average sessions
- * @param {array} -
+ * @param {number} - dataKey
  * @returns - component
  */
 

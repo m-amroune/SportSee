@@ -11,7 +11,8 @@ import PropTypes from "prop-types";
 
 /**
  * Chart with data user performance
- * @param {array} -
+ * @param {number} - value
+ * @param {string} - kind
  * @returns - component
  */
 

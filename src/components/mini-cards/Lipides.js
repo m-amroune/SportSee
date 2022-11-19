@@ -1,13 +1,19 @@
 import React from "react";
 import Img from "../../assets/fat-icon.svg";
 import PropTypes from "prop-types";
+/**
+ *
+ * @param {number} keyData
+ * @returns
+ */
+
 const Lipides = ({ keyData }) => {
   return (
     <div className="mini-card">
       <img src={Img} alt=" icon Lipides" />
       <div className="valor-nutriment">
         <p>
-          <span>{`${keyData}`}g</span>{" "}
+          <span>{`${keyData}`}g</span>
         </p>
         <p className="nutriments">Lipides</p>
       </div>

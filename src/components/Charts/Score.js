@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
 
 /**
  * Chart with data user score
- * @param {array} -
+ * @param {number} - userData
  * @returns - component
  */
 

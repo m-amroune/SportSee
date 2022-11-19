@@ -4,7 +4,7 @@ import {
   PerformanceData,
   UserMainData,
 } from "./classModel";
-let env = "env"; // switch "prod" (API) || "dev" (ApiMocked)
+let env = "prod"; // switch "prod" (API) || "dev" (ApiMocked)
 
 /**
  * Services for call API || APIMocked
@@ -66,7 +66,6 @@ const Services = {
       return result;
     }
   },
-
   getUserPerformanceById: async function (id) {
     if (env === "prod") {
       const response = await fetch(

@@ -1,6 +1,12 @@
 import React from "react";
 import "../styles/header.css";
 import PropTypes from "prop-types";
+/**
+ *
+ * @param {string} firstName
+ * @returns
+ */
+
 const Header = ({ firstName }) => {
   return (
     <header className="header">
